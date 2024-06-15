@@ -162,9 +162,12 @@ public class SettingsBaseActivity extends FragmentActivity implements CategoryHa
         final int transitionType = getTransitionType(intent);
         super.startActivityForResult(intent, requestCode, options);
         if (transitionType == TransitionType.TRANSITION_SLIDE) {
-            overridePendingTransition(R.anim.sud_slide_next_in, R.anim.sud_slide_next_out);
+            overridePendingTransition(
+                    com.google.android.setupdesign.R.anim.sud_slide_next_in,
+                    com.google.android.setupdesign.R.anim.sud_slide_next_out);
         } else if (transitionType == TransitionType.TRANSITION_FADE) {
-            overridePendingTransition(android.R.anim.fade_in, R.anim.sud_stay);
+            overridePendingTransition(
+                    android.R.anim.fade_in, com.google.android.setupdesign.R.anim.sud_stay);
         }
     }
 
@@ -172,7 +175,8 @@ public class SettingsBaseActivity extends FragmentActivity implements CategoryHa
     protected void onPause() {
         // For accessibility activities launched from setup wizard.
         if (getTransitionType(getIntent()) == TransitionType.TRANSITION_FADE) {
-            overridePendingTransition(R.anim.sud_stay, android.R.anim.fade_out);
+            overridePendingTransition(
+                    com.google.android.setupdesign.R.anim.sud_stay, android.R.anim.fade_out);
         }
         super.onPause();
     }
