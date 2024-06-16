@@ -68,7 +68,7 @@ public class ExthmDisplayVersionPreferenceController extends BasePreferenceContr
     public ExthmDisplayVersionPreferenceController(Context context, String key) {
         super(context, key);
         mUm = (UserManager) context.getSystemService(Context.USER_SERVICE);
-        mMetricsFeatureProvider = FeatureFactory.getFactory(context).getMetricsFeatureProvider();
+        mMetricsFeatureProvider = FeatureFactory.getFeatureFactory().getMetricsFeatureProvider();
     }
 
     public void setHost(InstrumentedPreferenceFragment fragment) {
